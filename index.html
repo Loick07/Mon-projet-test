@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Livrer Express Dakar - Service de livraison ultra-rapide de colis, plis et e-commerce partout à Dakar et sa banlieue en moins de 45 minutes.">
+    <title>Livrer Express Dakar | Livraison Rapide & Fiable 7j/7</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Détection précoce du thème pour éviter tout flash blanc au chargement -->
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('livrer_theme');
+            if (savedTheme === 'dark' || (!savedTheme && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+</head>
+
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="header" id="navbar">
+        <div class="container nav-container">
+            <a href="#hero" class="logo">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="brand-name">Livrer<span>Express</span></span>
+                    <span class="brand-tag">Dakar • 221</span>
+                </div>
+            </a>
+
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="#hero" class="nav-link active">Accueil</a></li>
+                    <li><a href="#comment-ca-marche" class="nav-link">Comment ça marche</a></li>
+                    <li><a href="#tarifs" class="nav-link">Tarifs</a></li>
+                    <li><a href="#temoignages" class="nav-link">Témoignages</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-cta-mobile">
+                    <button class="btn btn-outline btn-sm mobile-theme-btn" id="mobile-theme-toggle" type="button">
+                        <i class="fa-solid fa-moon"></i> <span>Mode Sombre</span>
+                    </button>
+                    <a href="tel:+221770000000" class="btn btn-outline btn-sm">
+                        <i class="fa-solid fa-phone"></i> +221 77 845 20 20
+                    </a>
+                    <button class="btn btn-primary btn-sm open-order-modal">
+                        <i class="fa-solid fa-paper-plane"></i> Commander une course
+                    </button>
+                </div>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="theme-toggle-btn" id="theme-toggle" type="button" aria-label="Passer en mode sombre ou clair" title="Changer de thème (sombre / clair)">
+                    <span class="theme-toggle-icon">
+                        <i class="fa-solid fa-moon icon-moon"></i>
+                        <i class="fa-solid fa-sun icon-sun"></i>
+                    </span>
+                </button>
+                <a href="tel:+221778452020" class="phone-chip">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>+221 77 845 20 20</span>
+                </a>
+                <button class="btn btn-primary open-order-modal">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    <span>Commander</span>
+                </button>
+                <button class="hamburger-btn" id="menu-toggle" aria-label="Menu Mobile">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+        </div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="badge-pill">
+                    <span class="pulse-dot"></span>
+                    <span>Service N°1 de livraison express à Dakar & Banlieue</span>
+                </div>
+                <h1 class="hero-title">
+                    Vos colis livrés en moins de <span class="highlight">45 minutes</span> partout à Dakar.
+                </h1>
+                <p class="hero-subtitle">
+                    Particuliers, restaurateurs ou boutiques e-commerce : profitez de coursiers professionnels à moto,
+                    d'un suivi GPS en direct et du paiement à la livraison (COD).
+                </p>
+
+                <div class="hero-cta-group">
+                    <button class="btn btn-primary btn-lg open-order-modal">
+                        <i class="fa-solid fa-motorcycle"></i>
+                        <span>Commander un coursier</span>
+                    </button>
+                    <a href="#calculateur" class="btn btn-outline-white btn-lg">
+                        <i class="fa-solid fa-calculator"></i>
+                        <span>Estimer le tarif</span>
+                    </a>
+                </div>
+
+                <!-- Trust Points -->
+                <div class="hero-features">
+                    <div class="feat-item">
+                        <i class="fa-solid fa-shield-check"></i>
+                        <span>Colis 100% assurés</span>
+                    </div>
+                    <div class="feat-item">
+                        <i class="fa-solid fa-clock"></i>
+                        <span>Dispo 7j/7 • 07h à 23h</span>
+                    </div>
+                    <div class="feat-item">
+                        <i class="fa-solid fa-money-bill-wave"></i>
+                        <span>Paiement Wave / OM / Espèces</span>
+                    </div>
+                </div>
+
+                <!-- Key Metrics -->
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <span class="stat-num" data-target="35" data-suffix=" min">35 min</span>
+                        <span class="stat-label">Délai moyen constaté</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-num" data-target="25" data-prefix="+" data-suffix="k">+25k</span>
+                        <span class="stat-label">Colis livrés avec succès</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-num" data-target="99.2" data-suffix="%" data-decimals="1">99.2%</span>
+                        <span class="stat-label">Satisfaction clients</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Interactive Card / Simulation -->
+            <div class="hero-visual">
+                <div class="delivery-card">
+                    <div class="delivery-card-header">
+                        <div class="status-indicator">
+                            <span class="dot-live"></span>
+                            <span>Course en direct</span>
+                        </div>
+                        <span class="tracking-code">#DKR-8942</span>
+                    </div>
+
+                    <div class="route-tracker">
+                        <div class="route-point start">
+                            <div class="point-marker"></div>
+                            <div class="point-info">
+                                <span class="label">Point de départ</span>
+                                <strong class="name">Plateau, Avenue Pompidou</strong>
+                                <span class="time">14h15 • Colis récupéré</span>
+                            </div>
+                        </div>
+                        <div class="route-line">
+                            <div class="route-progress-bar"></div>
+                            <div class="transit-icon">
+                                <i class="fa-solid fa-motorcycle"></i>
+                                <span class="transit-status-tag">En course • 14h28</span>
+                            </div>
+                        </div>
+                        <div class="route-point end">
+                            <div class="point-marker destination"></div>
+                            <div class="point-info">
+                                <span class="label">Point d'arrivée</span>
+                                <strong class="name">Almadies, Route du Méridien</strong>
+                                <span class="time">Arrivée estimée : 14h48</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="courier-profile">
+                        <div class="courier-avatar">
+                            <i class="fa-solid fa-user-astronaut"></i>
+                        </div>
+                        <div class="courier-details">
+                            <strong>Ibrahima Ndiaye</strong>
+                            <span>Coursier Express Certifié ★ 4.95 (1,240 courses)</span>
+                        </div>
+                        <a href="tel:+221778452020" class="btn-icon-call" aria-label="Appeler coursier">
+                            <i class="fa-solid fa-phone"></i>
+                        </a>
+                    </div>
+
+                    <div class="delivery-guarantee">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Remise contre signature & SMS de confirmation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comment ça marche (3 étapes avec icônes) -->
+    <section class="section how-it-works" id="comment-ca-marche">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-sub">Simplicité & Rapidité</span>
+                <h2 class="section-title">Comment ça marche ?</h2>
+                <p class="section-desc">Faites livrer vos plis et marchandises à Dakar en 3 étapes ultra simples, sans
+                    prise de tête.</p>
+            </div>
+
+            <div class="steps-grid">
+                <!-- Étape 1 -->
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <div class="step-icon-wrapper">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                    </div>
+                    <h3 class="step-title">1. Commandez votre course</h3>
+                    <p class="step-text">
+                        En quelques clics sur notre site ou directement sur WhatsApp, indiquez l'adresse de collecte,
+                        l'adresse de livraison et le contact du destinataire.
+                    </p>
+                    <div class="step-badge">En moins de 60 secondes</div>
+                </div>
+
+                <!-- Étape 2 -->
+                <div class="step-card highlighted">
+                    <div class="step-number">02</div>
+                    <div class="step-icon-wrapper">
+                        <i class="fa-solid fa-box-open"></i>
+                    </div>
+                    <h3 class="step-title">2. Collecte immédiate</h3>
+                    <p class="step-text">
+                        Notre système géolocalise le coursier à moto le plus proche. Il se présente à votre porte en
+                        moins de 15 minutes pour prendre en charge votre colis.
+                    </p>
+                    <div class="step-badge">Sous 15 minutes</div>
+                </div>
+
+                <!-- Étape 3 -->
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <div class="step-icon-wrapper">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <h3 class="step-title">3. Livraison & Preuve</h3>
+                    <p class="step-text">
+                        Le destinataire est livré en main propre. Vous recevez une preuve immédiate de livraison avec
+                        encaissement instantané si vous êtes e-commerçant.
+                    </p>
+                    <div class="step-badge">Remise sécurisée</div>
+                </div>
+            </div>
+
+            <!-- Interactive Quick Price Estimator Section -->
+            <div class="calculator-box" id="calculateur">
+                <div class="calc-header">
+                    <i class="fa-solid fa-calculator-simple"></i>
+                    <div>
+                        <h3>Estimez votre tarif en direct</h3>
+                        <p>Sélectionnez les zones de ramassage et de livraison à Dakar</p>
+                    </div>
+                </div>
+                <form class="calc-form" id="price-calc-form">
+                    <div class="form-group">
+                        <label for="pickup-zone"><i class="fa-solid fa-location-dot"></i> Zone de départ</label>
+                        <select id="pickup-zone" class="form-select" required>
+                            <option value="plateau">Dakar Plateau / Médina / Gueule Tapée</option>
+                            <option value="mermoz" selected>Mermoz / Sacré-Cœur / Fann</option>
+                            <option value="almadies">Almadies / Ngor / Yoff / Ouakam</option>
+                            <option value="maristes">Hann Maristes / Grand Yoff / Patte d'Oie</option>
+                            <option value="banlieue">Pikine / Guédiawaye / Parcelles</option>
+                            <option value="rufisque">Rufisque / Diamniadio / Keur Massar</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="dropoff-zone"><i class="fa-solid fa-flag-checkered"></i> Zone de livraison</label>
+                        <select id="dropoff-zone" class="form-select" required>
+                            <option value="plateau">Dakar Plateau / Médina / Gueule Tapée</option>
+                            <option value="mermoz">Mermoz / Sacré-Cœur / Fann</option>
+                            <option value="almadies" selected>Almadies / Ngor / Yoff / Ouakam</option>
+                            <option value="maristes">Hann Maristes / Grand Yoff / Patte d'Oie</option>
+                            <option value="banlieue">Pikine / Guédiawaye / Parcelles</option>
+                            <option value="rufisque">Rufisque / Diamniadio / Keur Massar</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="package-type"><i class="fa-solid fa-box"></i> Type d'envoi</label>
+                        <select id="package-type" class="form-select">
+                            <option value="doc">Pli & Document urgent (max 1kg)</option>
+                            <option value="standard" selected>Colis Standard (max 5kg)</option>
+                            <option value="lourd">Colis Volumineux (jusqu'à 15kg)</option>
+                        </select>
+                    </div>
+                </form>
+
+                <div class="calc-result" id="calc-result">
+                    <div class="result-details">
+                        <span class="est-label">Tarif estimé de votre course :</span>
+                        <div class="price-display">
+                            <span class="price-fcfa" id="calc-price">2 000 FCFA</span>
+                            <span class="price-eur" id="calc-price-eur">(~ 3,00 €)</span>
+                        </div>
+                        <span class="deliv-time" id="calc-time"><i class="fa-solid fa-stopwatch"></i> Temps estimé : 30
+                            à 45 min</span>
+                    </div>
+                    <button class="btn btn-primary btn-calc-order" id="btn-order-whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i> Commander cette course sur WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Tarifs (3 formules transparentes) -->
+    <section class="section pricing-section" id="tarifs">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-sub">Transparence & Pas de frais cachés</span>
+                <h2 class="section-title">Nos Tarifs de Livraison</h2>
+                <p class="section-desc">Des tarifs fixes et avantageux adaptés à vos besoins à Dakar, exprimés en Francs
+                    CFA et Euros.</p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Tarif 1 : Course Intra-Zone -->
+                <div class="pricing-card">
+                    <div class="card-tag">Idéal Particuliers</div>
+                    <h3 class="plan-title">Course Proximité</h3>
+                    <p class="plan-subtitle">Même quartier ou commune limitrophe à Dakar.</p>
+
+                    <div class="price-box">
+                        <div class="amount-fcfa">1 500 <span class="currency">FCFA</span></div>
+                        <div class="amount-eur">environ 2,30 € / course</div>
+                    </div>
+
+                    <ul class="features-list">
+                        <li><i class="fa-solid fa-check"></i> Rayon jusqu'à 5 km</li>
+                        <li><i class="fa-solid fa-check"></i> Prise en charge en 15 minutes</li>
+                        <li><i class="fa-solid fa-check"></i> Colis & plis jusqu'à 3 kg</li>
+                        <li><i class="fa-solid fa-check"></i> Suivi SMS / WhatsApp</li>
+                        <li><i class="fa-solid fa-check"></i> Paiement Wave, OM ou Cash</li>
+                    </ul>
+
+                    <button class="btn btn-outline-primary btn-block open-order-modal"
+                        data-plan="Course Proximité (1 500 FCFA)">
+                        Choisir cette formule
+                    </button>
+                </div>
+
+                <!-- Tarif 2 : Grand Dakar Express (Populaire) -->
+                <div class="pricing-card featured">
+                    <div class="popular-ribbon">Le Plus Demandé</div>
+                    <div class="card-tag tag-primary">Standard Dakar</div>
+                    <h3 class="plan-title">Grand Dakar Express</h3>
+                    <p class="plan-subtitle">D'un bout à l'autre de Dakar en un temps record.</p>
+
+                    <div class="price-box">
+                        <div class="amount-fcfa">2 500 <span class="currency">FCFA</span></div>
+                        <div class="amount-eur">environ 3,80 € / course</div>
+                    </div>
+
+                    <ul class="features-list">
+                        <li><i class="fa-solid fa-check"></i> Tout Dakar (Plateau, Almadies, Maristes, Yoff)</li>
+                        <li><i class="fa-solid fa-check"></i> Livraison garantie en moins de 45 min</li>
+                        <li><i class="fa-solid fa-check"></i> Poids jusqu'à 8 kg inclus</li>
+                        <li><i class="fa-solid fa-check"></i> Suivi GPS temps réel</li>
+                        <li><i class="fa-solid fa-check"></i> Signature électronique à l'arrivée</li>
+                        <li><i class="fa-solid fa-check"></i> Assurance colis incluse</li>
+                    </ul>
+
+                    <button class="btn btn-primary btn-block open-order-modal"
+                        data-plan="Grand Dakar Express (2 500 FCFA)">
+                        Commander maintenant
+                    </button>
+                </div>
+
+                <!-- Tarif 3 : E-Commerce & Banlieue / Pro -->
+                <div class="pricing-card">
+                    <div class="card-tag">E-Commerce & Pro</div>
+                    <h3 class="plan-title">Pack Pro & Banlieue</h3>
+                    <p class="plan-subtitle">Boutiques en ligne, restaurants & envois banlieue.</p>
+
+                    <div class="price-box">
+                        <div class="amount-fcfa">3 500 <span class="currency">FCFA</span></div>
+                        <div class="amount-eur">environ 5,30 € / course (dégessif)</div>
+                    </div>
+
+                    <ul class="features-list">
+                        <li><i class="fa-solid fa-check"></i> Dakar + Banlieue (Pikine, Guédiawaye, Rufisque)</li>
+                        <li><i class="fa-solid fa-check"></i> Encaissement Cash / Wave à la livraison (COD)</li>
+                        <li><i class="fa-solid fa-check"></i> Reversement des fonds sous 24h ouvrées</li>
+                        <li><i class="fa-solid fa-check"></i> Tarifs dégressifs pour + de 10 colis/jour</li>
+                        <li><i class="fa-solid fa-check"></i> Gestionnaire de compte dédié</li>
+                    </ul>
+
+                    <button class="btn btn-outline-primary btn-block open-order-modal"
+                        data-plan="Pack Pro & Banlieue (3 500 FCFA)">
+                        Devenir partenaire Pro
+                    </button>
+                </div>
+            </div>
+
+            <!-- Info Bar Under Pricing -->
+            <div class="pricing-guarantee-bar">
+                <div class="guarantee-item">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span><strong>100% Remboursé</strong> si le délai n'est pas respecté</span>
+                </div>
+                <div class="guarantee-item">
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+                    <span><strong>Zéro frais cachés</strong> : le tarif annoncé est le tarif payé</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Témoignages (3 avis clients réels) -->
+    <section class="section testimonials-section" id="temoignages">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-sub">Ce que disent nos clients</span>
+                <h2 class="section-title">Ils nous font confiance à Dakar</h2>
+                <p class="section-desc">Découvrez les retours d'expérience de nos clients réguliers, particuliers comme
+                    professionnels.</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <!-- Avis 1 -->
+                <div class="testimonial-card">
+                    <div class="rating-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <blockquote class="testimonial-text">
+                        "En tant que boutique en ligne de vêtements aux Almadies, la ponctualité est vitale. Avec Livrer
+                        Express, mes clientes reçoivent leurs robes le jour même, souvent en moins de 35 minutes. Et
+                        l'encaissement par Wave est ultra fiable !"
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-avatar avatar-1">
+                            <span>AD</span>
+                        </div>
+                        <div class="author-info">
+                            <h4 class="author-name">Aïssatou Diop</h4>
+                            <span class="author-role">Fondatrice de « Dakar Chic Boutique », Almadies</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Avis 2 -->
+                <div class="testimonial-card">
+                    <div class="rating-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <blockquote class="testimonial-text">
+                        "J'avais oublié des documents d'appel d'offres urgents à mon domicile à Mermoz alors que j'étais
+                        en réunion au Plateau. En 30 minutes montre en main, le coursier me les a remis à l'accueil. Un
+                        vrai sauvetage !"
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-avatar avatar-2">
+                            <span>MN</span>
+                        </div>
+                        <div class="author-info">
+                            <h4 class="author-name">Mamadou Ndiaye</h4>
+                            <span class="author-role">Directeur Financier, Cabinet d'Audit au Plateau</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Avis 3 -->
+                <div class="testimonial-card">
+                    <div class="rating-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <blockquote class="testimonial-text">
+                        "Des coursiers polis, toujours équipés de sac isotherme et qui appellent avant d'arriver. Je
+                        gère une pâtisserie à Sacré-Cœur et mes gâteaux arrivent toujours intacts. Rapport qualité-prix
+                        imbattable à Dakar."
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-avatar avatar-3">
+                            <span>FS</span>
+                        </div>
+                        <div class="author-info">
+                            <h4 class="author-name">Fatou Binetou Sarr</h4>
+                            <span class="author-role">Gérante de « Les Douceurs de Fatou », Sacré-Cœur</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Brand stats callout -->
+            <div class="trust-banner">
+                <div class="trust-stat">
+                    <strong class="stat-num" data-target="150" data-prefix="+">+150</strong>
+                    <span>Boutiques e-commerce partenaires</span>
+                </div>
+                <div class="trust-divider"></div>
+                <div class="trust-stat">
+                    <strong class="stat-num" data-target="15" data-suffix=" min">15 min</strong>
+                    <span>Délai moyen de prise en charge</span>
+                </div>
+                <div class="trust-divider"></div>
+                <div class="trust-stat">
+                    <strong class="stat-num" data-target="4.9" data-suffix=" / 5" data-decimals="1">4.9 / 5</strong>
+                    <span>Note moyenne sur Google & Facebook</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section CTA Avant Footer -->
+    <section class="banner-cta">
+        <div class="container banner-inner">
+            <div class="banner-text">
+                <h2>Un colis urgent à expédier tout de suite ?</h2>
+                <p>Nos livreurs sillonnent actuellement Dakar. Commandez maintenant et suivez votre coursier en temps
+                    réel.</p>
+            </div>
+            <div class="banner-actions">
+                <button class="btn btn-primary-light btn-lg open-order-modal">
+                    <i class="fa-solid fa-bolt"></i> Réserver une course
+                </button>
+                <a href="https://wa.me/221778452020?text=Bonjour%20Livrer%20Express,%20j'ai%20besoin%20d'une%20course%20urgente"
+                    target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp Direct
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer complet avec contacts et réseaux sociaux -->
+    <footer class="footer" id="contact">
+        <div class="container footer-container">
+            <!-- Colonne 1 : Présentation & Coordonnées -->
+            <div class="footer-col brand-col">
+                <div class="logo footer-logo">
+                    <div class="logo-icon">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <div class="logo-text">
+                        <span class="brand-name">Livrer<span>Express</span></span>
+                        <span class="brand-tag">Dakar, Sénégal</span>
+                    </div>
+                </div>
+                <p class="footer-about">
+                    La solution de livraison urbaine la plus rapide et fiable à Dakar. Nous connectons particuliers et
+                    entreprises à un réseau de coursiers qualifiés et vérifiés.
+                </p>
+                <div class="footer-socials">
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+                        aria-label="Facebook Livrer Express" class="social-icon fb">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+                        aria-label="Instagram Livrer Express" class="social-icon ig">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+                        aria-label="LinkedIn Livrer Express" class="social-icon in">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer"
+                        aria-label="TikTok Livrer Express" class="social-icon tt">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                    <a href="https://wa.me/221778452020" target="_blank" rel="noopener noreferrer"
+                        aria-label="WhatsApp Livrer Express" class="social-icon wa">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Colonne 2 : Liens Rapides -->
+            <div class="footer-col">
+                <h4 class="footer-heading">Navigation</h4>
+                <ul class="footer-links">
+                    <li><a href="#hero"><i class="fa-solid fa-chevron-right"></i> Accueil</a></li>
+                    <li><a href="#comment-ca-marche"><i class="fa-solid fa-chevron-right"></i> Comment ça marche</a>
+                    </li>
+                    <li><a href="#tarifs"><i class="fa-solid fa-chevron-right"></i> Grille des Tarifs</a></li>
+                    <li><a href="#temoignages"><i class="fa-solid fa-chevron-right"></i> Avis Clients</a></li>
+                    <li><a href="#calculateur"><i class="fa-solid fa-chevron-right"></i> Simulateur de course</a></li>
+                </ul>
+            </div>
+
+            <!-- Colonne 3 : Zones desservies à Dakar -->
+            <div class="footer-col">
+                <h4 class="footer-heading">Zones Desservies</h4>
+                <ul class="footer-zones">
+                    <li><i class="fa-solid fa-location-dot"></i> Dakar Plateau & Médina</li>
+                    <li><i class="fa-solid fa-location-dot"></i> Almadies, Ngor & Ouakam</li>
+                    <li><i class="fa-solid fa-location-dot"></i> Mermoz, Sacré-Cœur, Fann</li>
+                    <li><i class="fa-solid fa-location-dot"></i> Hann Maristes, Point E, Yoff</li>
+                    <li><i class="fa-solid fa-location-dot"></i> Pikine, Guédiawaye, Rufisque</li>
+                </ul>
+            </div>
+
+            <!-- Colonne 4 : Contacts directs -->
+            <div class="footer-col contact-col">
+                <h4 class="footer-heading">Contactez-nous</h4>
+                <ul class="contact-list">
+                    <li>
+                        <div class="contact-icon"><i class="fa-solid fa-location-pin"></i></div>
+                        <div>
+                            <strong>Adresse :</strong>
+                            <p>Avenue Cheikh Anta Diop, Mermoz Pyrotechnie, Dakar, Sénégal</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                        <div>
+                            <strong>Téléphone 7j/7 :</strong>
+                            <p><a href="tel:+221778452020">+221 77 845 20 20</a></p>
+                            <p><a href="tel:+221338241010">+221 33 824 10 10</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div>
+                            <strong>Email :</strong>
+                            <p><a href="mailto:contact@livrerexpress-dakar.sn">contact@livrerexpress-dakar.sn</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="contact-icon"><i class="fa-solid fa-clock"></i></div>
+                        <div>
+                            <strong>Horaires d'ouverture :</strong>
+                            <p>Du Lundi au Dimanche : 07h00 - 23h00</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer Bottom Copyright -->
+        <div class="footer-bottom">
+            <div class="container footer-bottom-inner">
+                <p>&copy; 2026 Livrer Express Dakar. Tous droits réservés.</p>
+                <div class="footer-badges">
+                    <span><i class="fa-solid fa-circle-check"></i> Agrément Logistique N° DK-2024-874</span>
+                    <span class="sep">•</span>
+                    <a href="#">Politique de Confidentialité</a>
+                    <span class="sep">•</span>
+                    <a href="#">Conditions de Livraison</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Buttons for Mobile Quick Actions -->
+    <div class="mobile-sticky-bar">
+        <a href="tel:+221778452020" class="mobile-action-btn btn-call">
+            <i class="fa-solid fa-phone"></i>
+            <span>Appeler</span>
+        </a>
+        <button class="mobile-action-btn btn-order open-order-modal">
+            <i class="fa-solid fa-motorcycle"></i>
+            <span>Commander</span>
+        </button>
+        <a href="https://wa.me/221778452020?text=Bonjour%20Livrer%20Express,%20je%20souhaite%20une%20livraison"
+            target="_blank" rel="noopener noreferrer" class="mobile-action-btn btn-wa">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>WhatsApp</span>
+        </a>
+    </div>
+
+    <!-- Modal de Commande Express -->
+    <div class="modal" id="order-modal" aria-hidden="true" role="dialog">
+        <div class="modal-overlay" id="modal-overlay"></div>
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <div>
+                    <h3 class="modal-title">Commander une livraison express</h3>
+                    <p class="modal-desc">Remplissez les informations et notre coursier se met en route !</p>
+                </div>
+                <button class="modal-close" id="modal-close" aria-label="Fermer la fenêtre">&times;</button>
+            </div>
+            <form class="modal-body" id="order-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="client-name">Votre nom / Entreprise *</label>
+                        <input type="text" id="client-name" class="form-input" placeholder="Ex: Moussa Diagne" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="client-phone">Téléphone (avec WhatsApp) *</label>
+                        <input type="tel" id="client-phone" class="form-input" placeholder="Ex: 77 123 45 67" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="pickup-addr">Lieu de ramassage (Départ) *</label>
+                        <input type="text" id="pickup-addr" class="form-input"
+                            placeholder="Quartier, rue, repère (ex: Mermoz vers boulangerie jaune)" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="delivery-addr">Lieu de livraison (Destination) *</label>
+                        <input type="text" id="delivery-addr" class="form-input"
+                            placeholder="Quartier, point de repère (ex: Almadies près Total)" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="package-desc">Description du colis</label>
+                        <input type="text" id="package-desc" class="form-input"
+                            placeholder="Ex: Sac avec vêtements, documents urgents...">
+                    </div>
+                    <div class="form-group">
+                        <label for="payment-method">Mode de règlement</label>
+                        <select id="payment-method" class="form-select">
+                            <option value="wave">Wave</option>
+                            <option value="om">Orange Money</option>
+                            <option value="especes">Espèces à la collecte</option>
+                            <option value="cod">Paiement à la livraison par le destinataire (COD)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="modal-selected-formula">Formule sélectionnée</label>
+                    <input type="text" id="modal-selected-formula" class="form-input"
+                        value="Grand Dakar Express (2 500 FCFA)" readonly>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fa-solid fa-paper-plane"></i> Valider et envoyer au coursier
+                    </button>
+                    <p class="modal-note">
+                        <i class="fa-solid fa-lock"></i> Vous recevrez un SMS et un message WhatsApp de confirmation
+                        instantanément.
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification for user feedback -->
+    <div class="toast" id="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <i class="fa-solid fa-circle-check"></i>
+        <span id="toast-message">Demande envoyée avec succès !</span>
+        <div class="toast-progress" id="toast-progress"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
