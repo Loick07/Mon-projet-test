@@ -127,32 +127,32 @@ document.addEventListener('DOMContentLoaded', () => {
         const dropoff = dropoffSelect.value;
         const packageType = packageSelect.value;
 
-        let basePrice = 2000;
+        let basePrice = 2500;
         let estimatedMinutes = "30 à 45 min";
 
         // Même quartier
         if (pickup === dropoff) {
-            basePrice = 1500;
+            basePrice = 2000;
             estimatedMinutes = "20 à 30 min";
         }
         // Banlieue éloignée
         else if (pickup === 'rufisque' || dropoff === 'rufisque') {
-            basePrice = 3500;
+            basePrice = 4000;
             estimatedMinutes = "45 à 65 min";
         }
         else if (pickup === 'banlieue' || dropoff === 'banlieue') {
-            basePrice = 2500;
+            basePrice = 3000;
             estimatedMinutes = "35 à 50 min";
         }
         else {
             // Intra-Dakar urbain standard (ex: Plateau <-> Almadies)
-            basePrice = 2000;
+            basePrice = 2500;
             estimatedMinutes = "30 à 45 min";
         }
 
         // Ajustement selon le type de colis
         if (packageType === 'doc') {
-            basePrice = Math.max(1500, basePrice - 200);
+            basePrice = Math.max(2000, basePrice - 200);
         } else if (packageType === 'lourd') {
             basePrice += 1000;
         }
@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const toast = document.getElementById('toast');
     const toastMessage = document.getElementById('toast-message');
 
-    function openModal(planName = 'Grand Dakar Express (2 500 FCFA)') {
+    function openModal(planName = 'Grand Dakar Express (3 000 FCFA)') {
         if (!orderModal) return;
         if (modalFormulaInput && planName) {
             modalFormulaInput.value = planName;

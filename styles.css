@@ -2844,3 +2844,245 @@ img {
         transition: none !important;
     }
 }
+
+/* ========================================================
+   AMELIORATIONS DESIGN — POLISH VISUEL GLOBAL
+   ======================================================== */
+
+/* ---- 1. Hero : gradient plus profond + overlays lumineux ---- */
+.hero {
+    background: linear-gradient(150deg, #05102e 0%, #0c1f4a 30%, #1a3882 65%, #1d4ed8 100%);
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 55% 50% at 10% 65%, rgba(56, 189, 248, 0.18) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 55% at 88% 20%, rgba(129, 140, 248, 0.13) 0%, transparent 55%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* ---- 2. Badge pill hero : lueur subtile ---- */
+.badge-pill {
+    box-shadow: 0 0 24px rgba(56, 189, 248, 0.22);
+}
+
+/* ---- 3. Section-sub : bordure gauche accentuée ---- */
+.section-sub {
+    border-left: 3px solid var(--primary-blue);
+    border-radius: 0 var(--radius-full) var(--radius-full) 0;
+    padding-left: 0.8rem;
+}
+
+/* ---- 4. Section title : espacement lettre affiné ---- */
+.section-title {
+    letter-spacing: -0.03em;
+}
+
+/* ---- 5. Step cards : watermark numéro plus imposant ---- */
+.step-number {
+    font-size: 5.5rem;
+    color: rgba(59, 130, 246, 0.07);
+    top: 0.5rem;
+    right: 1rem;
+    line-height: 1;
+    user-select: none;
+}
+
+.step-card:hover .step-number {
+    color: rgba(59, 130, 246, 0.15);
+}
+
+.step-card:not(.highlighted) .step-icon-wrapper {
+    border: 1px solid var(--blue-100);
+}
+
+.step-card.highlighted {
+    background: linear-gradient(150deg, #ebf5ff 0%, #dbeafe 60%, #eff6ff 100%);
+}
+
+[data-theme="dark"] .step-card.highlighted {
+    background: var(--card-step-highlight);
+}
+
+/* Section how-it-works : motif pointillé subtil */
+.how-it-works {
+    position: relative;
+}
+
+.how-it-works::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(59, 130, 246, 0.055) 1px, transparent 1px);
+    background-size: 26px 26px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.how-it-works .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* ---- 6. Pricing featured card : background dégradé ---- */
+.pricing-card.featured {
+    background: linear-gradient(160deg, #f0f7ff 0%, #dbeafe 55%, #eff6ff 100%);
+}
+
+[data-theme="dark"] .pricing-card.featured {
+    background: linear-gradient(160deg, #182645 0%, #1c3060 55%, #131d33 100%);
+}
+
+/* Ribbon : bleu-violet plus dynamique */
+.popular-ribbon {
+    background: linear-gradient(135deg, #1d4ed8 0%, #7c3aed 100%);
+}
+
+/* Section pricing : motif diagonal très subtil */
+.pricing-section {
+    position: relative;
+}
+
+.pricing-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(60deg, rgba(59, 130, 246, 0.028) 25%, transparent 25%),
+        linear-gradient(-60deg, rgba(59, 130, 246, 0.028) 25%, transparent 25%);
+    background-size: 42px 42px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.pricing-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* ---- 7. Testimonials : guillemet décoratif géant ---- */
+.testimonial-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-card::before {
+    content: '\201C';
+    position: absolute;
+    top: -1rem;
+    left: 1.25rem;
+    font-size: 8rem;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--primary-blue);
+    opacity: 0.065;
+    font-family: Georgia, 'Times New Roman', serif;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+    z-index: 0;
+}
+
+.testimonial-card:hover::before {
+    opacity: 0.13;
+}
+
+/* Contenu des cartes au-dessus du guillemet */
+.testimonial-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ---- 8. CTA Banner : overlay radial + fond plus soutenu ---- */
+.banner-cta {
+    background: linear-gradient(135deg, #0c1f4a 0%, #1d4ed8 55%, #2563eb 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 65% 90% at 95% 50%, rgba(99, 102, 241, 0.28) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.banner-cta .banner-inner {
+    position: relative;
+    z-index: 1;
+}
+
+/* ---- 9. Footer : dégradé plus profond ---- */
+.footer {
+    background: linear-gradient(185deg, #060e20 0%, #0b1528 60%, #070e1c 100%);
+}
+
+/* ---- 10. Trust stats : texte en dégradé bleu ---- */
+.trust-stat strong {
+    background: linear-gradient(135deg, var(--primary-blue), var(--primary-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+[data-theme="dark"] .trust-stat strong {
+    background: linear-gradient(135deg, #60a5fa, #93c5fd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ---- 11. Calculator box : bordure et ombre affinées ---- */
+.calculator-box {
+    border-color: var(--blue-100);
+    box-shadow: 0 20px 45px -12px rgba(29, 78, 216, 0.14), 0 0 0 1px rgba(59, 130, 246, 0.06);
+}
+
+[data-theme="dark"] .calculator-box {
+    border-color: rgba(59, 130, 246, 0.22);
+    box-shadow: 0 20px 45px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* ---- 12. Delivery card : glassmorphism renforcé ---- */
+.delivery-card {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    box-shadow: 0 28px 55px -12px rgba(0, 0, 0, 0.38), 0 0 0 1px rgba(255, 255, 255, 0.25);
+}
+
+[data-theme="dark"] .delivery-card {
+    background: rgba(19, 29, 51, 0.93);
+    border: 1px solid rgba(59, 130, 246, 0.22);
+}
+
+/* ---- 13. Rating stars : taille augmentée ---- */
+.rating-stars {
+    font-size: 1rem;
+}
+
+/* ---- 14. Social icons : hover plus dynamique ---- */
+.social-icon {
+    transition: transform 0.28s var(--ease-spring), background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.social-icon:hover {
+    transform: translateY(-5px) scale(1.12);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* ---- 15. Guarantee items : icône cerclée ---- */
+.guarantee-item i {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(16, 185, 129, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
